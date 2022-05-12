@@ -1,0 +1,22 @@
+#!groovy
+
+pipeline {
+  agent { label 'docker' }
+
+  options {
+    ansiColor('xterm')
+  }
+
+  stages {
+    stage('Build & Push Images and Apply k8s') {
+      steps {
+	sh 'echo "Hello world"'
+      }
+    }
+  }
+  post {
+    always {
+      cleanWs()
+    }
+  }
+}

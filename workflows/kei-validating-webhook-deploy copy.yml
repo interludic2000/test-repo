@@ -1,0 +1,17 @@
+name: kei-validating-webhook
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "kei-validating-webhook/**"
+
+jobs:
+  deploy:
+    name: deploys kei-validating-webhook to production
+    runs-on: ubuntu-latest
+    steps:        
+      - name: Trigger Jenkins Scan
+        run: |
+          curl https://ci.section.io/multibranch-webhook-trigger/invoke\?token=$deploy_token
+        env: # Or as an environment variable
+          deploy_token: ${{ secrets.KEI_VALIDATING_WEBHOOK_DEPLOY }}
