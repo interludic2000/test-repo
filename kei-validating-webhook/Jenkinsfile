@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Build & Push Images and Apply k8s') {
       steps {
-	sh echo "Hello world"
+	sh 'echo "Hello world"'
       }
     }
   }
