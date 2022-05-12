@@ -14,4 +14,4 @@ jobs:
         run: |
           curl https://ci.section.io/multibranch-webhook-trigger/invoke\?token=$deploy_token
         env: # Or as an environment variable
-          deploy_token: ${{ secrets.KEI_VALIDATING_WEBHOOK_DEPLOY }}
+          deploy_token: ${{ secrets.TEST_REPO_DEPLOY }}
