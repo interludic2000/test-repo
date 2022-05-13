@@ -1,4 +1,4 @@
-name: kei-validating-webhook
+name: kei-extractor
 on:
   push:
     branches: [ main ]
